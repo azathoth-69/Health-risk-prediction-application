@@ -1,6 +1,7 @@
-# health-risk-prediction-app
+# Health-risk-prediction-application
 
-Install these - before running - flask
+Install these before running - 
+flask
 pandas
 scikit-learn
 matplotlib
