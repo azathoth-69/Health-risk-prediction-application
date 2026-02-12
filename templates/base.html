@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthAI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/app.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">💜 HealthAI</div>
+
+    <nav class="menu">
+        <a href="/" class="{% if active_page == 'predict' %}active{% endif %}">
+            Predict Risk
+        </a>
+        <a href="/analytics" class="{% if active_page == 'analytics' %}active{% endif %}">
+            Analytics
+        </a>
+        <a href="/records" class="{% if active_page == 'records' %}active{% endif %}">
+            Records
+        </a>
+        <a href="#" class="{% if active_page == 'docs' %}active{% endif %}">
+            Documentation
+        </a>
+    </nav>
+</header>
+
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+    HealthAI – Minor Project | Flask + ML | Educational Use Only
+</footer>
+
+</body>
+</html>

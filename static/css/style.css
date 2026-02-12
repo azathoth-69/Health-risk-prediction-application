@@ -1,0 +1,258 @@
+:root {
+    --primary: #7c3aed;
+    --secondary: #ec4899;
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --muted: #6b7280;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+    color: #111827;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #7c3aed;
+}
+
+/* NAV MENU */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #374151;
+    padding: 8px 18px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background: rgba(124, 58, 237, 0.1);
+}
+
+.menu a.active {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+}
+
+/* ================= MAIN CARD ================= */
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.container h2 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+/* ================= SECTION CARDS ================= */
+
+.section {
+    margin-top: 28px;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.personal {
+    background: #eef4ff;
+}
+
+.vitals {
+    background: #fff1f2;
+}
+
+.metrics {
+    background: #ecfdf5;
+}
+
+/* ================= GRID ================= */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+label {
+    font-size: 14px;
+    color: #374151;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+}
+
+/* ================= BUTTON ================= */
+
+button {
+    margin-top: 32px;
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.95;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ================= RESULT PAGE ================= */
+
+.result-banner {
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-banner h2 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.badge {
+    background: rgba(255,255,255,0.2);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.confidence {
+    font-size: 15px;
+}
+
+.progress {
+    margin-top: 10px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 10px;
+    height: 10px;
+    width: 260px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+}
+
+/* ================= COLOR STATES ================= */
+
+.normal {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.at-risk {
+    background: linear-gradient(90deg, #f59e0b, #f97316);
+}
+
+.critical {
+    background: linear-gradient(90deg, #ef4444, #ec4899);
+}
+
+.message {
+    font-size: 16px;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 14px 24px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn.primary {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.btn.secondary {
+    background: #e5e7eb;
+    color: #111827;
+}

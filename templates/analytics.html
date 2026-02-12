@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h2>📊 Analytics Dashboard</h2>
+    <p class="subtitle">Overview of patient health assessments</p>
+
+    <!-- SUMMARY CARDS -->
+    <div class="grid-3" style="margin-top:30px;">
+        <div class="section personal">
+            <div class="section-title">👥 Total Patients</div>
+            <h1>{{ total }}</h1>
+        </div>
+
+        <div class="section metrics">
+            <div class="section-title">✅ Normal</div>
+            <h1>{{ normal }}</h1>
+        </div>
+
+        <div class="section vitals">
+            <div class="section-title">⚠️ At Risk</div>
+            <h1>{{ at_risk }}</h1>
+        </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:20px;">
+        <div class="section vitals">
+            <div class="section-title">🚨 Critical</div>
+            <h1>{{ critical }}</h1>
+        </div>
+
+        <div class="section metrics" style="grid-column: span 2;">
+            <div class="section-title">📈 Risk Distribution</div>
+            <img
+                src="/static/{{ chart }}"
+                alt="Risk Chart"
+                style="max-width:320px;"
+            >
+        </div>
+    </div>
+</div>
+
+{% endblock %}

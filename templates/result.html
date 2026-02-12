@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <!-- RESULT BANNER -->
+    <div class="result-banner {{ risk|lower }}">
+
+        <div>
+            <!-- Assessment Name -->
+            <p class="badge">
+                Assessment: {{ name }}
+            </p>
+
+            <h2>{{ risk }}</h2>
+
+            <p class="confidence">
+                Model Confidence: <strong>{{ confidence }}%</strong>
+            </p>
+
+            <!-- Confidence Progress Bar -->
+            <div class="progress">
+                <div class="progress-fill" style="width: {{ confidence }}%"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- HEALTH MESSAGE -->
+    <div class="section message">
+        {% if risk == "Normal" %}
+            ✅ <strong>Healthy Status:</strong>
+            Your health indicators are within the normal range.
+            Maintain a balanced diet and regular exercise.
+        {% elif risk == "At Risk" %}
+            ⚠️ <strong>Warning:</strong>
+            Some health indicators are outside the normal range.
+            Lifestyle changes and periodic checkups are recommended.
+        {% else %}
+            🚨 <strong>Critical Condition:</strong>
+            High-risk health indicators detected.
+            Please consult a healthcare professional immediately.
+        {% endif %}
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="actions">
+        <a href="/" class="btn secondary">➕ New Assessment</a>
+        <button onclick="window.print()" class="btn primary">🖨 Print Report</button>
+    </div>
+
+</div>
+
+{% endblock %}

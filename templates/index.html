@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h2>Patient Health Assessment</h2>
+    <p class="subtitle">
+        Enter patient details to predict health risk using AI-powered analysis
+    </p>
+
+    <!-- QUICK PRESETS -->
+    <div class="section" style="background:#f5f3ff;">
+        <div class="section-title">⚡ Quick Fill Presets (Demo)</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" onclick="presetHealthy()" class="btn secondary">Healthy Adult</button>
+            <button type="button" onclick="presetAtRisk()" class="btn secondary">At Risk Profile</button>
+            <button type="button" onclick="presetHighRisk()" class="btn secondary">High Risk Profile</button>
+        </div>
+    </div>
+
+    <form method="POST">
+
+        <!-- ASSESSMENT DETAILS -->
+        <div class="section personal">
+            <div class="section-title">📝 Assessment Details</div>
+            <div class="grid-2">
+                <div>
+                    <label>Assessment / Patient Name</label>
+                    <input
+                        name="name"
+                        type="text"
+                        placeholder="e.g. John Doe – Routine Check"
+                        required
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONAL INFO -->
+        <div class="section personal">
+            <div class="section-title">👤 Personal Information</div>
+            <div class="grid-3">
+                <div>
+                    <label>Age (years)</label>
+                    <input name="age" type="number" required>
+                </div>
+                <div>
+                    <label>Gender</label>
+                    <select name="gender" required>
+                        <option value="">Select gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Blood Pressure (mmHg)</label>
+                    <input name="bp" type="number" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- VITAL SIGNS -->
+        <div class="section vitals">
+            <div class="section-title">❤️ Vital Signs</div>
+            <div class="grid-2">
+                <div>
+                    <label>Heart Rate (bpm)</label>
+                    <input name="hr" type="number" required>
+                </div>
+                <div>
+                    <label>Blood Sugar (mg/dL)</label>
+                    <input name="sugar" type="number" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- BODY METRICS -->
+        <div class="section metrics">
+            <div class="section-title">📊 Body Metrics</div>
+
+            <!-- BMI CALCULATOR -->
+            <div class="grid-2">
+                <div>
+                    <label>Height (cm)</label>
+                    <input id="height" type="number" oninput="calculateBMI()">
+                </div>
+                <div>
+                    <label>Weight (kg)</label>
+                    <input id="weight" type="number" oninput="calculateBMI()">
+                </div>
+            </div>
+
+            <div style="margin-top:16px;">
+                <label>BMI (Body Mass Index)</label>
+                <input id="bmi" name="bmi" type="number" step="0.1" required>
+            </div>
+        </div>
+
+        <button type="submit">
+            Predict Health Risk
+        </button>
+    </form>
+</div>
+
+{% endblock %}
